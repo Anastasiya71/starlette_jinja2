@@ -75,7 +75,7 @@ class Register(HTTPEndpoint):
         usrs = sqlalchemy.select([users]).where(users.c.username == form['username'])
         result = await database.fetch_all(usrs)
         if len(result) != 0:
-            return templates.TemplateResponse('already_exists.html', {'request': request})
+            return templates.TemplateResponse('already_exist.html', {'request': request})
         inserting = users.insert().values(username=form['username'], password=form['password'])
         result = await database.execute(inserting)
         request.session.update({'user': form['username']})
