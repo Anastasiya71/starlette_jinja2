@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+  <form action="/register" method="POST">
+    <h1>Registration</h1>
+    <h3>Username</h3>
+    <input type="text" name="username" id="password" required minlength="3">
+    <h3>Password</h3>
+    <input type="password" name="password" id="password" required minlength="3">
+    <h3>Confirm password:</h3>
+    <input type="password" name="confirmation" id="confirmation" required minlength="3">
+    <br>
+    <br>
+    <button type="submit">Register</button>
+    <br>
+    <hr>
+    {% if not_confirmed %}
+      <h3>Password mismatch!<br>Try again.</h3>
+    {% endif %}
+  </form>
+{% endblock %}
+
+{% block menu %}
+<a href="/dashboard">Dashboard</a>
+<br>
+<a href="/logout">Logout</a>
+{% endblock %}

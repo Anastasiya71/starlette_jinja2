@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Jinja2 auth: {% block title %}{% endblock %}</title>
+</head>
+<body>
+  {% block user_panel %}
+    {% if request.user.is_authenticated %}
+      <h3 style="float: right;">User: {{ request.user.username }}</h3>
+    {% endif %}
+  {% endblock %}
+  {% block content %}{% endblock %}
+  {% block menu %}
+    <a href="/dashboard">Dashboard</a>
+    <br>
+    <a href="/register">Register</a>
+    <br>
+    <a href="/logout">Logout</a>
+  {% endblock %}
+</body>
+</html>

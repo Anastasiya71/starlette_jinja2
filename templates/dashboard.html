@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <h1>Hello, {{request.user.username}}!</h1>
+{% endblock %}
+{% block menu %}
+  <a href="/">Go to login page</a>
+  <br>
+  <a href="/register">Register</a>
+  <br>
+  <a href="/logout">Logout</a>
+{% endblock %}

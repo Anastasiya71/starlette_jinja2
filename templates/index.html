@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Authentication{% endblock %}
+{% block content %}
+  <form action="/" method="POST">
+    <h1>Authentication</h1>
+    <hr>
+    <h3>Username</h3>
+    <input type="text" name="username" id="password" required minlength="3">
+    <h3>Password</h3>
+    <input type="password" name="password" id="password" required minlength="3">
+    <br>
+    <br>
+    <button type="submit">Login</button>
+    <br>
+    <hr>
+  </form>
+  {% if invalid %}
+    <h3>Invalid password!<br>Try again.</h3>
+  {% endif %}
+{% endblock %}
